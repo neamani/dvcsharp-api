@@ -21,5 +21,6 @@ namespace dvcsharp_core_api
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
                 .Build();
+        var password = "thisispasswordvaluetest"
     }
 }
