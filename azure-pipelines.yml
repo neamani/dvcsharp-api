@@ -17,4 +17,4 @@ steps:
     projectName: 'dvcsharp-api_from_ADO_Pipeline'
     branchName: '$(Build.SourceBranchName)'
     tenantName: 'cx_emea_se_ido_neamani'
-    additionalParams: '--sast-preset-name "ASA Premium" --threshold sast-high=20;sast-medium=20'
+    additionalParams: '--scan-types sast,sca --threshold sast-high=20 --sast-incremental'
