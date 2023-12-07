@@ -1,0 +1,20 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+
+- task: Checkmarx AST@2
+  inputs:
+    CheckmarxService: 'ast_service_connection_2'
+    projectName: 'dvcsharp-api_from_ADO_Pipeline'
+    branchName: '$(Build.SourceBranchName)'
+    tenantName: 'cx_emea_se_ido_neamani'
+    additionalParams: '--sast-preset-name "ASA Premium" --threshold sast-high=20;sast-medium=20'
