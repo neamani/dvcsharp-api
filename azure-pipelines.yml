@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: ubuntu-latest
+  name: ido_local_host_pool
 
 steps:
 
@@ -17,4 +17,4 @@ steps:
     projectName: 'dvcsharp-api_from_ADO_Pipeline'
     branchName: '$(Build.SourceBranchName)'
     tenantName: 'cx_emea_se_ido_neamani'
-    additionalParams: '--scan-types sast,sca --threshold sast-high=20 --sast-incremental'
+    additionalParams: '--scan-types sast,sca  --sast-incremental --debug --sca-resolver "C:\playground\sca_resolver_win_new\ScaResolver.exe"'
